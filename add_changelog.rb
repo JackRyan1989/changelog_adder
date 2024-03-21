@@ -111,14 +111,14 @@ class AddChangelog
         return
       end
       construct_changelog
-      # unless message_valid?
-      #   puts REDO_CHANGELOG
-      #   if redo_changelog? 
-      #     compose_message
-      #   else
-      #     @message = nil
-      #   end
-      #end
+      unless message_valid?
+        puts REDO_CHANGELOG
+        if redo_changelog? 
+          compose_message
+        else
+          @message = nil
+        end
+      end
     end
 end 
 
