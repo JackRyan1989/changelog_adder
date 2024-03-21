@@ -4,3 +4,4 @@ This is just a simple script that runs in a git pre-push hook. The idea is that 
 
 There are some dependencies so make sure to `bundle install` them.
 
+-Jack
