@@ -118,7 +118,7 @@ class AddChangelog
       #   else
       #     @message = nil
       #   end
-      end
+      #end
     end
 end 
 
