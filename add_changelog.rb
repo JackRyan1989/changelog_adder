@@ -44,10 +44,10 @@ class AddChangelog
     end
 
     def perform_commit
-      options = '--allow-empty -m'
+      git_commands = 'commit --allow-empty -m'
       begin
         output, status = Open3.capture2(
-          'git', 'commit', options
+          'git', :stdin_data => git_commands
         )
       rescue
         raise 'git commit failed' 
