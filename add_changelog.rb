@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-# How will this work?
-# Runs on push, so we need a git commit hook
-
 require 'open3'
 require 'tty-prompt'
 
