@@ -44,11 +44,8 @@ class AddChangelog
     end
 
     def perform_commit
-      opts = "--allow-empty -m '#{@message}'"
       begin
-        output, err, status = Open3.capture3(
-          'git', 'commit', opts
-        )
+        puts `git commit --allow-empty -m '#{@message}'`
       rescue
         raise 'git commit failed' 
       end
