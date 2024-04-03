@@ -41,7 +41,7 @@ class AddChangelog
     end
 
     def perform_commit
-        puts `git commit --allow-empty -m '#{@message}'`
+        system("git commit --allow-empty -m '#{@message}'", exception: true)
     end
 
     def commit_to_commit?
