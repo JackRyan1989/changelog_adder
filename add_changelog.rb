@@ -33,22 +33,15 @@ class AddChangelog
     # @return array
     def make_git_log(base_branch, source_branch)
       format = '--pretty=title: %s%nbody:%b%nDELIMITER'
-      begin
-        log, err, status = Open3.capture3(
-          'git', 'log', format, "#{base_branch}..#{source_branch}"
-        )
-      rescue
-        raise 'git log failed' unless status.success?
-      end
+      log, err, status = Open3.capture3(
+        'git', 'log', format, "#{base_branch}..#{source_branch}"
+      )
+      raise 'git log failed' unless status.success?
       log
     end
 
     def perform_commit
-      begin
         puts `git commit --allow-empty -m '#{@message}'`
-      rescue
-        raise 'git commit failed' 
-      end
     end
 
     def commit_to_commit?
